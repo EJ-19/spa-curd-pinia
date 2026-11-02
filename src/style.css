@@ -248,32 +248,131 @@ th {
   color: var(--muted);
 }
 
+/* ===== Página de inicio ===== */
 
-.product-form-container {
-  max-width: 500px;
+.inicio {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+/* Presentación */
+.presentacion {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 4rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #f4f4f5, #e4e4e7);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.etiqueta {
+  display: inline-block;
+  color: #52525b;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  margin-bottom: 1rem;
+}
+
+.presentacion h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.presentacion h1 span {
+  color: #52525b;
+}
+
+.presentacion p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.presentacion .btn {
+  margin-top: 1rem;
+}
+
+/* Integrantes */
+.integrantes {
+  text-align: center;
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.product-form {
-  margin-top: 1.5rem;
-}
-
-.product-form-actions {
-  display: flex;
-  gap: 0.5rem;
-}
-
-
-.cart-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.cart-icon {
-  width: 24px;
-  height: 24px;
+.integrantes > p {
   color: var(--muted);
-  stroke: currentColor;
-  flex-shrink: 0;
+  margin-top: 0.4rem;
 }
+
+.lista-integrantes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+}
+
+.integrante {
+  flex: 1;
+  min-width: 190px;
+  max-width: 250px;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.integrante:hover {
+  transform: translateY(-4px);
+  border-color: #a1a1aa;
+}
+
+.integrante span {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.integrante h3 {
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+/* Pie de página */
+.pie {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 4rem;
+  padding: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+/* Adaptación móvil */
+@media (max-width: 600px) {
+  .presentacion {
+    padding: 2rem 1rem;
+  }
+
+  .presentacion h1 {
+    font-size: 1.8rem;
+  }
+
+  .integrante {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+
+.integrante svg {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.8rem;
+}
+
+
