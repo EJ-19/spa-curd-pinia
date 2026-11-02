@@ -1,3 +1,11 @@
+
+
+<script setup>
+import { useCartStore } from '../stores/useCartStore'
+
+const cartStore = useCartStore()
+</script>
+
 <template>
   <div>
     <h2>Resumen del Carrito</h2>
@@ -27,10 +35,10 @@
               <td>${{ item.price }}</td>
               <td>
                 <div style="display: flex; align-items: center; gap: 0.5rem;">
-                  <!-- Botón para disminuir de uno en uno -->
+
                   <button @click="cartStore.removeFromCart(item.id)" class="btn btn-danger" style="padding: 0.2rem 0.5rem; font-size: 0.8rem;">-</button>
                   <span>{{ item.quantity }}</span>
-                  <!-- Botón para aumentar de uno en uno -->
+
                   <button @click="cartStore.addToCart(item)" class="btn btn-success" style="padding: 0.2rem 0.5rem; font-size: 0.8rem;">+</button>
                 </div>
               </td>
@@ -54,9 +62,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { useCartStore } from '../stores/useCartStore'
-
-const cartStore = useCartStore()
-</script>

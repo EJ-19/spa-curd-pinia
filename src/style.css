@@ -247,3 +247,33 @@ th {
   letter-spacing: 0.06em; 
   color: var(--muted);
 }
+
+
+.product-form-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.product-form {
+  margin-top: 1.5rem;
+}
+
+.product-form-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+
+.cart-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.cart-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--muted);
+  stroke: currentColor;
+  flex-shrink: 0;
+}
