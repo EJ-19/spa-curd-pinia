@@ -1,3 +1,43 @@
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import { useProductStore } from '../stores/useProductStore'
+
+const route = useRoute()
+const router = useRouter()
+const productStore = useProductStore()
+
+const isEditing = ref(false)
+const form = ref({
+  id: null,
+  name: '',
+  price: 0,
+  description: ''
+})
+
+onMounted(() => {
+  if (route.params.id) {
+    const existing = productStore.getProductById(route.params.id)
+    if (existing) {
+      isEditing.value = true
+      form.value = { ...existing }
+    }
+  }
+})
+
+const handleSubmit = () => {
+  if (isEditing.value) {
+    productStore.updateProduct(form.value)
+  } else {
+    productStore.addProduct(form.value)
+  }
+  router.push('/productos')
+}
+</script>
+
+
+
+
 <template>
   <div style="max-width: 500px; margin: 0 auto;">
     <h2>{{ isEditing ? 'Editar Producto' : 'Crear Producto' }}</h2>
@@ -35,40 +75,3 @@
   </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import { useProductStore } from '../stores/useProductStore'
-
-const route = useRoute()
-const router = useRouter()
-const productStore = useProductStore()
-
-const isEditing = ref(false)
-const form = ref({
-  id: null,
-  name: '',
-  price: 0,
-  image: '/imgs/',
-  description: ''
-})
-
-onMounted(() => {
-  if (route.params.id) {
-    const existing = productStore.getProductById(route.params.id)
-    if (existing) {
-      isEditing.value = true
-      form.value = { ...existing }
-    }
-  }
-})
-
-const handleSubmit = () => {
-  if (isEditing.value) {
-    productStore.updateProduct(form.value)
-  } else {
-    productStore.addProduct(form.value)
-  }
-  router.push('/productos')
-}
-</script>
