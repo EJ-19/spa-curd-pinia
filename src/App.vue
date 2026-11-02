@@ -7,7 +7,7 @@ const cartStore = useCartStore()
 
 <template>
   <header>
-    <h1>Mi Tienda SPA</h1>
+    <h1>Alejandria</h1>
 
     <nav>
       <router-link to="/">Inicio</router-link>
