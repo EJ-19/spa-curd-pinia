@@ -366,6 +366,25 @@ th {
 }
 
 
+.btn-buy {
+  background: #15803d;
+  color: #fff;
+}
+
+.btn-buy:hover {
+  background: #166534;
+}
+
+.purchase-message {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #15803d;
+  font-size: 0.9rem;
+}
+
 
 @media (max-width: 600px) {
   .presentacion {
