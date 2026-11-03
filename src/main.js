@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.vue'
-import { router } from './router' // Crearas esta carpeta/archivo
+import { router } from './router' 
 import "@fontsource-variable/dm-sans"
 import './style.css'
 
