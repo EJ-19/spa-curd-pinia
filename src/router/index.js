@@ -13,7 +13,6 @@ const routes = [
 ]
 
 export const router = createRouter({
-  // Usamos Hash mode para evitar problemas 404 en GitHub Pages
   history: createWebHashHistory(),
   routes
 })

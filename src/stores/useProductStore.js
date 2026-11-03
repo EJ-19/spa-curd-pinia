@@ -48,11 +48,7 @@ export const useProductStore = defineStore('product', () => {
   ])
 
   const addProduct = (product) => {
-    products.value.push({
-      ...product,
-      id: Date.now(),
-      image: product.image || `${import.meta.env.BASE_URL}imgs/laptop.png`
-    })
+    products.value.push({ ...product, id: Date.now() })
   }
 
   const updateProduct = (updatedProduct) => {
